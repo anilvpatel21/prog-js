@@ -11,12 +11,12 @@
 <body>
     <div class="container">
         <h1>Quiz</h1>
-
+        <p>Score: <span id="score">0/4</span></p>
         <div class="card bg-light p-2">
             <p id="que">Question 1</p>
             <p>What is the value of z? <br> var x=3; var y=4; var z= x+y;</p>
             <ul class="list-group">
-                <li class="list-group-item"><input class="bg-success" type="radio" name="q1" value="5" onclick="xyz(this, 1)"/> z = 5</li>
+                <li class="list-group-item"><input type="radio" name="q1" value="5" onclick="xyz(this, 1)"/> z = 5</li>
                 <li class="list-group-item"><input type="radio" name="q1" value="7" onclick="xyz(this, 1)"/> z = 7</li>
                 <li class="list-group-item"><input type="radio" name="q1" value="9" onclick="xyz(this, 1)"/> z = 9</li>
                 <li class="list-group-item"><input type="radio" name="q1" value="11" onclick="xyz(this, 1)"/> z = 11</li>
@@ -27,7 +27,7 @@
             <p id="que">Question 2</p>
             <p>What is the value of z? <br> var x=3; var y=4; var z= ++x + --y;</p>
             <ul class="list-group">
-                <li class="list-group-item"><input class="bg-success" type="radio" name="q2" value="6" onclick="xyz(this, 2)"/> z = 6</li>
+                <li class="list-group-item"><input type="radio" name="q2" value="6" onclick="xyz(this, 2)"/> z = 6</li>
                 <li class="list-group-item"><input type="radio" name="q2" value="3" onclick="xyz(this, 2)"/> z = 3</li>
                 <li class="list-group-item"><input type="radio" name="q2" value="7" onclick="xyz(this, 2)"/> z = 7</li>
                 <li class="list-group-item"><input type="radio" name="q2" value="1" onclick="xyz(this, 2)"/> z = 1</li>
@@ -38,10 +38,21 @@
             <p id="que">Question 3</p>
             <p>What is the value of x, y, z? <br> var x=3; var y=4; var z= x-- + ++y;</p>
             <ul class="list-group">
-                <li class="list-group-item"><input class="bg-success" type="radio" name="q3" value="6" onclick="xyz(this, 3)"/> z = 6</li>
+                <li class="list-group-item"><input type="radio" name="q3" value="6" onclick="xyz(this, 3)"/> z = 6</li>
                 <li class="list-group-item"><input type="radio" name="q3" value="7" onclick="xyz(this, 3)"/> z = 7</li>
                 <li class="list-group-item"><input type="radio" name="q3" value="8" onclick="xyz(this, 3)"/> z = 8</li>
                 <li class="list-group-item"><input type="radio" name="q3" value="9" onclick="xyz(this, 3)"/> z = 9</li>
+            </ol>
+        </div>
+
+        <div class="card bg-light p-2">
+            <p id="que">Question 4</p>
+            <p>What is the value of x, y, z? <br> var x=3; var y=4; var z= --x + y--;</p>
+            <ul class="list-group">
+                <li class="list-group-item"><input type="radio" name="q4" value="6" onclick="xyz(this, 4)"/> z = 6, x = 2, y = 3</li>
+                <li class="list-group-item"><input type="radio" name="q4" value="7" onclick="xyz(this, 4)"/> z = 7</li>
+                <li class="list-group-item"><input type="radio" name="q4" value="8" onclick="xyz(this, 4)"/> z = 8</li>
+                <li class="list-group-item"><input type="radio" name="q4" value="9" onclick="xyz(this, 4)"/> z = 9</li>
             </ol>
         </div>
     </div>
