@@ -21,10 +21,11 @@ var score;
 function checkAns() {
     //alert(queNo);
     score = 0;
-    for(var i=0; i< userAns.length; i++ ) {
+    for(var i=0; i< ansArr.length; i++ ) {
         //console.log(userAns[i])
+        var queNo = i+1;
         if(userAns[i]) { //if user have not given any ans (click nahi kia)
-            var ele = userAns[i].ele, queNo = i+1;
+            var ele = userAns[i].ele;
             var parentEle = ele.parentElement;
             if (userAns[i].val == ansArr[queNo - 1]) {
                 score++;
@@ -32,17 +33,15 @@ function checkAns() {
                 parentEle.classList.add("bg-success");
             } else {
                 parentEle.classList.add("bg-danger");
-                showCorrectAns(parentEle,ansArr[queNo - 1]);
             }
         }
-
+        var grandEle = document.getElementById("q"+queNo);
+        showCorrectAns(grandEle,ansArr[queNo - 1]);
     }
     showModal();
 }
 
-function showCorrectAns(pEle, ans) {
-    var grandEle = pEle.parentElement;
-
+function showCorrectAns(grandEle, ans) {
     for(var i=0; i<grandEle.children.length; i++ ) {
         if(grandEle.children[i].firstElementChild.value == ans) {
             grandEle.children[i].classList.add("bg-success");
