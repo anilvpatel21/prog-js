@@ -11,7 +11,7 @@
 <body>
     <div class="container">
         <h1>Quiz</h1>
-        <p>Score: <span id="score">0/4</span></p>
+        <div id="timer"></div>
         <div class="card bg-light p-2">
             <p id="que">Question 1</p>
             <p>What is the value of z? <br> var x=3; var y=4; var z= x+y;</p>
@@ -58,18 +58,18 @@
         <div class="my-2">
             <!-- HTML Invoke Modal -->
             <!-- <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#checkModal">Check Score Using HTML</button> -->
-            <button class="btn btn-primary" onclick="checkAns()" >Check Score</button>
+            <button class="btn btn-primary" onclick="checkAns()" >Submit</button>
         </div>
 
         <div class="modal" tabindex="-1" id="checkModal">
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title">Wonderful</h5>
+                  <h5 class="modal-title">Result:</h5>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                  <p>You are doing great. Keep it up.</p>
+                  <p>Score: <span id="score">0/4</span></p>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

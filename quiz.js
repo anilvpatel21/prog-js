@@ -3,6 +3,34 @@ var modalToggle = document.getElementById('checkModal');
 var myModalObj = new bootstrap.Modal(modalToggle); //Module
 //console.log(myModalObj)
 ///myModal.show();
+                //1000ms = 1s * 60 = 60s = 1min * 5 = 5min
+
+var min = 1;
+var second  = min * 60; //300s
+
+var timer = document.getElementById('timer');
+timer.innerText = min + ':' + '00';  // 5 : 00;
+
+var suSec = 60;
+
+var timeVar = setInterval(function() {
+    //display condition
+    suSec--;
+    timer.innerText = (min - 1) + ':' + ((suSec >= 10) ? suSec : '0' + suSec);
+    if(suSec <= 0) {
+        min = min - 1;
+        suSec = 60;
+    }
+    //timer condition
+    second--;
+    if(second <= 0) {
+        clearInterval(timeVar);
+        checkAns();
+    }
+},1000);
+
+
+
 
 
 var ansArr = [7, 7, 8, 6];
@@ -50,7 +78,5 @@ function showCorrectAns(grandEle, ans) {
 }
 
 function showModal() {
-    if(score >= 3) {
-        myModalObj.show(); //programming
-    }
+    myModalObj.show(); //programming
 }
