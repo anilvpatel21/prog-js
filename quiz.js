@@ -1,25 +1,7 @@
-//var ans1 = 7, ans2 = 7, ans3 = 8;
-//arr   index 0, 1, 2
 
-class Car {
-    constructor(modal, year) {
-        this.modal = modal;
-        this.year = year;
-    }
-
-    getYear() {
-        return this.year;
-    }
-}
-
-var audiCar = new Car("Audi",1992);
-console.log(audiCar);
-
-
-
-var modalToggle = document.getElementById('exampleModal');
-var myModal = new bootstrap.Modal(modalToggle); //Module
-console.log(myModal)
+var modalToggle = document.getElementById('checkModal');
+var myModalObj = new bootstrap.Modal(modalToggle); //Module
+//console.log(myModalObj)
 ///myModal.show();
 
 
@@ -39,9 +21,9 @@ var score;
 function checkAns() {
     //alert(queNo);
     score = 0;
-    for(var i=0; i<userAns.length; i++ ) {
-        console.log(userAns[i])
-        if(userAns[i]) {
+    for(var i=0; i< userAns.length; i++ ) {
+        //console.log(userAns[i])
+        if(userAns[i]) { //if user have not given any ans (click nahi kia)
             var ele = userAns[i].ele, queNo = i+1;
             var parentEle = ele.parentElement;
             if (userAns[i].val == ansArr[queNo - 1]) {
@@ -50,14 +32,26 @@ function checkAns() {
                 parentEle.classList.add("bg-success");
             } else {
                 parentEle.classList.add("bg-danger");
+                showCorrectAns(parentEle,ansArr[queNo - 1]);
             }
         }
+
     }
     showModal();
 }
 
+function showCorrectAns(pEle, ans) {
+    var grandEle = pEle.parentElement;
+
+    for(var i=0; i<grandEle.children.length; i++ ) {
+        if(grandEle.children[i].firstElementChild.value == ans) {
+            grandEle.children[i].classList.add("bg-success");
+        }
+    }
+}
+
 function showModal() {
     if(score >= 3) {
-        myModal.show();
+        myModalObj.show(); //programming
     }
 }
