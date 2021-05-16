@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React Document</title>
+</head>
+<body>
+
+    <!-- Broswer DOM Real DOM -->
+    <h2>Hello World</h2>
+
+    <!-- React creates Virtual DOM
+    (pura DOM structure create karenga
+    while the JS code execute and render it in the real DOM here at root id -->
+    <div id="root"></div>
+
+    <!-- React Library to create component -->
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <!-- React DOM Library to render virtual DOM into somewhere in Real DOM-->
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <!-- Babel to convert JSX(Javascript XML)(HTML in JS) syntax to JS-->
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    <!-- babel script as we used JSX syntax -->
+    <script type="text/babel">
+        //React use to create a component which is reuseable
+        //Each Component render only one parent element
+
+
+        class Display extends React.Component {
+            render() {
+                return <div>
+                        <p>"Hello, Sherya. How are you"</p>
+                </div>
+            }
+        }
+
+        class Question extends React.Component {
+            render() {
+                //this will get render when it will be called
+                //a component only return single parent element
+                return <div>
+                        {/* Reuseable Component */ }
+                        <Display />
+                        <Display />
+                        <Display />
+                        <Display />
+                </div>
+
+            }
+        }
+        //React DOM will create Virtual DOM with single entry point component
+        //and then render this virtual DOM into the real DOM root id.
+        ReactDOM.render(<Question/>,document.getElementById('root'))
+    </script>
+</body>
+</html>
